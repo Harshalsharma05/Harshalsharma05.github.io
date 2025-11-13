@@ -92,34 +92,19 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="inline-block"
-          >
-            <span className="inline-block px-4 py-2 bg-primary-100 text-primary-600 rounded-full text-sm font-semibold mb-4">
-              Get In Touch
-            </span>
-          </motion.div>
-          <h2 className="section-title">Let's Work Together</h2>
-          <p className="section-subtitle max-w-3xl mx-auto">
-            Have a project in mind or want to collaborate? I'd love to hear from
-            you.
-          </p>
+          <h2 className="section-heading text-gradient">Contact</h2>
+          <p className="section-subheading">Let's Work Together</p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Contact Information - Left Side (Minimal) */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-2"
           >
             <div className="space-y-6">
               <p className="text-lg text-gray-600 leading-relaxed">
@@ -143,7 +128,7 @@ const Contact = () => {
                 <div className="flex items-center space-x-3">
                   <FiMapPin className="w-5 h-5 text-primary-600" />
                   <span className="text-gray-700">
-                    {personal.location}, Gujarat, India
+                    {personal.location}, India
                   </span>
                 </div>
 
@@ -180,13 +165,12 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-3"
           >
             <div className="card">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
                 Send me a message
               </h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 {/* Name */}
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
@@ -207,8 +191,8 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent focus:bg-white transition-all duration-300 outline-none"
-                    placeholder="John Doe"
+                    className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent focus:bg-white transition-all duration-300 outline-none"
+                    placeholder="your precious name"
                   />
                 </motion.div>
 
@@ -232,8 +216,8 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent focus:bg-white transition-all duration-300 outline-none"
-                    placeholder="john@example.com"
+                    className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent focus:bg-white transition-all duration-300 outline-none"
+                    placeholder="email@example.com"
                   />
                 </motion.div>
 
@@ -256,8 +240,8 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    rows="6"
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent focus:bg-white transition-all duration-300 resize-none outline-none"
+                    rows="3"
+                    className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent focus:bg-white transition-all duration-300 resize-none outline-none"
                     placeholder="Tell me about your project or ideas..."
                   />
                 </motion.div>

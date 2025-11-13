@@ -163,7 +163,7 @@ export const portfolioData = {
       ],
 
       links: {
-        github: "github.com/Harshalsharma05/quickcourt",
+        github: "github.com/Harshalsharma05/Baawre_Baadal_Odoo_25",
         demo: "drive.google.com/file/d/1jQiotSKq7pxTIpLseHckpKXTzvnYI3RB/view?usp=sharing",
       },
 
@@ -226,7 +226,7 @@ export const portfolioData = {
 
       links: {
         live: "tatvamai.in",
-        github: "github.com/Harshalsharma05/dhvanishilp",
+        github: "github.com/AnujSharma-05/TatvamAI_Webtech",
       },
 
       images: ["/projects/dhvanishilp-1.jpg", "/projects/dhvanishilp-2.jpg"],
@@ -286,8 +286,8 @@ export const portfolioData = {
       ],
 
       links: {
-        github: "github.com/Harshalsharma05/movie-recommender",
-        live: "movie-rec-harshal.streamlit.app",
+        github: "github.com/Harshalsharma05/movie_recommender_website",
+        live: "movie-recommendation-system-ae6f.onrender.com/",
       },
 
       images: ["/projects/movie-rec-1.jpg", "/projects/movie-rec-2.jpg"],
