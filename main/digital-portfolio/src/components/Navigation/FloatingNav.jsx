@@ -71,7 +71,7 @@ const FloatingNav = () => {
 
   return (
     <div
-      className={`fixed right-8 top-1/2 -translate-y-1/2 z-40 transition-all duration-300 ${
+      className={`hidden lg:block fixed right-8 top-1/2 -translate-y-1/2 z-40 transition-all duration-300 ${
         isVisible
           ? "opacity-100 translate-x-0"
           : "opacity-0 translate-x-20 pointer-events-none"

@@ -57,7 +57,7 @@ const Navbar = () => {
             onClick={() => scrollToSection("cover")}
             className="text-xl sm:text-2xl font-bold text-gray-900 hover:text-primary-600 transition-colors"
           >
-            {portfolioData.personal.name.split(" ")[0]}
+            {portfolioData.personal.name}
           </button>
 
           {/* Desktop Navigation */}
