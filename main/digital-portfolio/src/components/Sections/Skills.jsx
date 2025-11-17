@@ -1,9 +1,48 @@
 import { motion } from "framer-motion";
 import { FiCode, FiHeart, FiTrendingUp } from "react-icons/fi";
+import {
+  SiJavascript,
+  SiPython,
+  SiCplusplus,
+  SiMysql,
+  SiReact,
+  SiNodedotjs,
+  SiExpress,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiMongodb,
+  SiPostgresql,
+  SiAmazonwebservices,
+  SiDocker,
+  SiKubernetes,
+  SiRender,
+  SiApachekafka,
+} from "react-icons/si";
 import { portfolioData } from "../../data/portfolioData";
 
 const Skills = () => {
   const { skills } = portfolioData;
+
+  // Icon mapping for technical skills
+  const skillIcons = {
+    JavaScript: SiJavascript,
+    Python: SiPython,
+    "C++": SiCplusplus,
+    SQL: SiMysql,
+    "React.js": SiReact,
+    "Node.js": SiNodedotjs,
+    "Express.js": SiExpress,
+    "Next.js": SiNextdotjs,
+    TailwindCSS: SiTailwindcss,
+    MongoDB: SiMongodb,
+    PostgreSQL: SiPostgresql,
+    MySQL: SiMysql,
+    AWS: SiAmazonwebservices,
+    Docker: SiDocker,
+    Kubernetes: SiKubernetes,
+    Render: SiRender,
+    Kafka: SiApachekafka,
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -52,33 +91,36 @@ const Skills = () => {
                 </h3>
               </div>
 
-              <div className="space-y-10">
+              <div className="space-y-8">
                 {skills.technical.map((category, idx) => (
                   <div key={idx}>
                     <h4 className="text-xl font-bold text-gray-900 mb-4">
                       {category.category}
                     </h4>
-                    <div className="space-y-4">
-                      {category.skills.map((skill, skillIdx) => (
-                        <div key={skillIdx}>
-                          <div className="flex items-center justify-between mb-2">
-                            <span className="text-gray-800 font-semibold">
+                    <div className="flex flex-wrap gap-3">
+                      {category.skills.map((skill, skillIdx) => {
+                        const SkillIcon = skillIcons[skill.name];
+                        return (
+                          <motion.div
+                            key={skillIdx}
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            whileInView={{ scale: 1, opacity: 1 }}
+                            transition={{
+                              duration: 0.3,
+                              delay: skillIdx * 0.05,
+                            }}
+                            whileHover={{ scale: 1.05 }}
+                            className="flex items-center gap-2 px-4 py-3 rounded-lg border-2 border-gray-300 bg-white cursor-pointer transition-all duration-300 hover:bg-gray-900 hover:border-gray-900 group"
+                          >
+                            {SkillIcon && (
+                              <SkillIcon className="w-5 h-5 text-gray-700 group-hover:text-white transition-colors duration-300" />
+                            )}
+                            <span className="font-semibold text-gray-800 group-hover:text-white transition-colors duration-300">
                               {skill.name}
                             </span>
-                            <span className="text-gray-600 text-sm">
-                              {skill.years}+ years | {skill.level}%
-                            </span>
-                          </div>
-                          <div className="relative h-3 bg-gray-200 rounded-full overflow-hidden">
-                            <motion.div
-                              initial={{ width: 0 }}
-                              whileInView={{ width: `${skill.level}%` }}
-                              transition={{ duration: 1, delay: idx * 0.1 }}
-                              className="absolute top-0 left-0 h-full bg-gradient-to-r from-primary-600 to-secondary-600 rounded-full"
-                            />
-                          </div>
-                        </div>
-                      ))}
+                          </motion.div>
+                        );
+                      })}
                     </div>
                   </div>
                 ))}
